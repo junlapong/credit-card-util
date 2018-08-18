@@ -1,0 +1,16 @@
+# git ignore
+
+.DS_Store
+
+target/
+log/
+src/test/resources/*.properties
+
+# Eclipse files
+.classpath
+.project
+.settings
+
+# IntelliJ files
+.idea/
+*.iml
