@@ -52,15 +52,11 @@ public class BinLookup {
 
 			HttpResponse response = HttpClients.createDefault().execute(httpPost);
 			String jsonStr = EntityUtils.toString(response.getEntity());
-			logger.debug("json: {}", jsonStr);
 			
 			ObjectMapper mapper = new ObjectMapper();
 			Object json = mapper.readValue(jsonStr, Object.class);	
 			logger.debug("json: \n{}", mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json));
-			  
-//			JSONObject json = new JSONObject(jsonStr);
-//			logger.debug("Region  : {}", json.getString("region"));
-//			logger.debug("City    : {}", json.getString("city"));
+
 		} catch (IOException | ParseException | JSONException ex) {
 			ex.printStackTrace();
 			logger.error("ERROR: {}", ex.getMessage());
